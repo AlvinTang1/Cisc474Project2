@@ -1,0 +1,16 @@
+ <div [hidden]="categories.length==0">
+<h2>Top {{attributes.perPage}} Categories of Questions</h2>
+<div class="container-fluid">
+<table class='table-responsive table'>
+  <thead>
+  <th>Position</th><th>Artist</th>
+</thead>
+  <tr *ngFor="let category of categories;let i=index" (click)='showDetail(i,category)' class="clickable" >
+    <td>
+  {{i+1}}</td><td> {{category.name}}</td>
+  </tr>
+</table>
+</div>
+<br/>&nbsp;
+</div>
+

@@ -1,0 +1,40 @@
+<div [hidden]="questions.length==0">
+  <h2>Top {{attributes.perPage}} Questions per your categories</h2>
+  <div class="container-fluid">
+    <table class="table table-responsive">
+      <thead>
+        <th>#</th>
+        <th>Question</th>
+        <th>Category</th>
+      </thead>
+      <tbody>
+        <template ngFor let-question [ngForOf]="questions" let-index="index">
+          <tr (click)='showDetail(index,question)' class="clickable">
+            <td>
+              {{index+1}}</td>
+            <td> {{question.name}}</td>
+            <td>{{question.category.name}}</td>
+          </tr>
+          <tr>
+            <td colspan=3 class='detail' [hidden]='index!=selectedQuestion'>
+              <div class="container-fluid">
+                <div class='col-md-3'>
+                  <img src='{{question.image[2]["#text"]}}' class="img-responsive">
+                </div>
+                <div class="col-md-4">
+                  <h2>{{question.name}}</h2>
+                  <h4>Cateogry: {{question.category.name}}</h4>
+                  <h4>Difficulty: {{question.difficulty}}</h4>
+                  <h4>
+                    <a href='{{question.url}}' target='_new'>OpenTDB Webpage</a>
+                  </h4>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </template>
+      </tbody>
+    </table>
+    <br/>&nbsp;
+  </div>
+</div>
