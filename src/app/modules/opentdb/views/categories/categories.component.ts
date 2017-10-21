@@ -1,7 +1,7 @@
 import { DialogService } from 'ng2-bootstrap-modal';
-import { LastFmService } from '../../last-fm.service';
+import { OpenTDBService } from '../../opentdb.service';
 import { Component, OnInit } from '@angular/core';
-import {ArtistPopupComponent} from './artist-popup/artist-popup.component';
+import {CategoryPopupComponent} from './category-popup/category-popup.component';
 
 @Component({
   selector: 'app-categories',
@@ -11,7 +11,7 @@ import {ArtistPopupComponent} from './artist-popup/artist-popup.component';
 export class CategoriesComponent {
   categories: any[] = [ ];
   attributes: any[] = [ ];
-  constructor(private _apiSvc: CategoriesService, private _dialogService: DialogService) {
+  constructor(private _apiSvc: OpenTDBService, private _dialogService: DialogService) {
     _apiSvc.getCategories(1).subscribe(x => {
       this.categories = x.categories.category;
       this.attributes = x.categories['@attr'];

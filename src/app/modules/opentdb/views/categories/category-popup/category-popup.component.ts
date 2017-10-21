@@ -13,7 +13,7 @@ export interface ConfirmModel {
     styleUrls: ['./category-popup.component.css']
 
 })
-export class ArtistPopupComponent extends DialogComponent<ConfirmModel,  boolean> implements ConfirmModel {
+export class CategoryPopupComponent extends DialogComponent<ConfirmModel,  boolean> implements ConfirmModel {
   title:  string;
   message:  string;
   imageUrl: string;

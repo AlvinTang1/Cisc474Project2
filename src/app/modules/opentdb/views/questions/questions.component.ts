@@ -1,5 +1,5 @@
 import { DialogService } from 'ng2-bootstrap-modal';
-import { LastFmService } from '../../questions.service';
+import { OpenTDBService } from '../../opentdb.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
