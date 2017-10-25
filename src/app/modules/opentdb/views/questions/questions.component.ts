@@ -13,10 +13,10 @@ export class QuestionsComponent implements OnInit {
   attributes: any[] = [ ];
   selectedQuestion = -1;
   constructor(private _apiSvc: OpenTDBService, private _dialogService: DialogService) {
-    _apiSvc.getQuestions(1).subscribe(x => {
-      this.questions = x.questions.question;
-      this.attributes = x.questions['@attr'];
-     });
+    // _apiSvc.getQuestions(1, 10, 'medium', ).subscribe(x => {
+    //   this.questions = x.questions.question;
+    //   this.attributes = x.questions['@attr'];
+    //  });
   }
 
   showDetail(index, track) {

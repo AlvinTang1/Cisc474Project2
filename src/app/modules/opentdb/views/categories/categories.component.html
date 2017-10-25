@@ -3,9 +3,19 @@
 <div class="container-fluid">
 <table class='table-responsive table'>
   <thead>
-  <th>Position</th><th>Artist</th>
+  <th>Choose your categories:</th>
 </thead>
-  <tr *ngFor="let category of categories;let i=index" (click)='showDetail(i,category)' class="clickable" >
+  <tr *ngFor="let category of categories | orderBy : 'name'; let i=index" (click)='addCategory(category)' class="clickable" >
+    <td>
+      
+  {{i+1}}</td><td> {{category.name}}</td>
+  </tr>
+</table>
+<table class='table-responsive table'>
+  <thead>
+  <th>Chosen categories:</th>
+</thead>
+  <tr *ngFor="let category of chosenCategories;let i=index" (click)='removeCategory(category)' class="clickable" >
     <td>
   {{i+1}}</td><td> {{category.name}}</td>
   </tr>

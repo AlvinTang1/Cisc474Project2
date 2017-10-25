@@ -4,12 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';import { AppRoutingMod
 import { CollapseModule } from 'ng2-bootstrap';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './views/home/home.component';
+import { OrderBy } from './orderBy.pipe';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    OrderBy
   ],
   imports: [
     BrowserModule,

@@ -5,7 +5,7 @@ import { HomeComponent } from './views/home/home.component';
 const routes: Routes = [
   {path: '', redirectTo: 'home',pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
-  {path: 'trivia', loadChildren: './modules/opentdb/opentdb.module#OpenTDBModule'},
+  {path: 'opentdb', loadChildren: './modules/opentdb/opentdb.module#OpenTDBModule'},
 ];
 
 @NgModule({

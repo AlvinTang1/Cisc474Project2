@@ -11,13 +11,13 @@ import { CategoryPopupComponent } from './views/categories/category-popup/catego
 import { OpenTDBService } from './opentdb.service';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'category'},
-  {path: 'category', component: CategoriesComponent},
-  {path: 'question', component: QuestionsComponent}
+  {path: '', redirectTo: 'categories'},
+  {path: 'categories', component: CategoriesComponent},
+  {path: 'questions', component: QuestionsComponent}
 ];
 
 export function openTDBfactory(http: Http){
-  return new OpenTDBService(http, 'https://ws.audioscrobbler.com/2.0');
+  return new OpenTDBService(http, 'https://opentdb.com/');
 }
 
 @NgModule({
