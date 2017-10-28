@@ -13,3 +13,10 @@
 .jumbotron{
     margin-top:3.6em;
 }
+
+
+.center-logo {
+    margin: auto;
+    display: block;
+    padding: 10px;
+}
