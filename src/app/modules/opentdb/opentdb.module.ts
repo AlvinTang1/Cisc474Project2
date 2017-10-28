@@ -17,7 +17,7 @@ const routes: Routes = [
 ];
 
 export function openTDBfactory(http: Http){
-  return new OpenTDBService(http, 'https://opentdb.com/');
+  return new OpenTDBService(http, 'https://opentdb.com/api.php?');
 }
 
 @NgModule({
