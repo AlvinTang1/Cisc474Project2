@@ -40,7 +40,7 @@ export class OpenTDBService {
 
   //change this to retrieve a list of questions
   getQuestions = (page: number, questionCount: number, difficulty: string, categoryId: number, type: string) => this.http.get(
-    this.baseUri + 'amount=' + questionCount + '&'
+    this.baseUri + 'api.php?' + 'amount=' + questionCount + '&'
     + 'category=' + categoryId + '&'
     + 'difficulty=' + difficulty + '&' //easy, medium, hard
     + 'type=' + type, //multiple, boolean
