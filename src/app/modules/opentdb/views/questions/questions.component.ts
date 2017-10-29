@@ -1,6 +1,7 @@
+
 import { DialogService } from 'ng2-bootstrap-modal';
 import { OpenTDBService } from '../../opentdb.service';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-questions',
@@ -30,7 +31,7 @@ export class QuestionsComponent /*implements OnInit*/ {
   onTestGet() {
      this.httpService.getQuiz(this.category, this.difficulty).subscribe(
           data => {
-              this.getQuestion = JSON.stringify(data['results'][0]['question']);
+              this.getQuestion = (data['results'][0]['question']);
               this.getAnswer = (data['results'][0]['correct_answer']);
               this.getType = (data['results'][0]['type']);
               this.getWrong1 = (data['results'][0]['incorrect_answers'][0]);

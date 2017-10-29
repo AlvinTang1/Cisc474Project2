@@ -60,7 +60,7 @@ export class OpenTDBService {
     getQuiz(baseCategory: number, baseDifficulty: string) {
       this.baseCategory = baseCategory;
       this.baseDifficulty = baseDifficulty;
-       this.quizUrl = this.baseUri + 'api.php?';
+       this.quizUrl = this.baseUri + 'api.php?' + 'amount=1';
        // id range for cats [9,32]
        if (this.baseCategory >= 9 && this.baseCategory <= 32) {
            this.quizUrl = this.quizUrl + '&category=' + this.baseCategory;
@@ -68,7 +68,7 @@ export class OpenTDBService {
        if (this.baseDifficulty !== '') {
            this.quizUrl = this.quizUrl + '&difficulty=' + this.baseDifficulty;
        }
-       this.quizUrl = this.quizUrl + '&tpye=multiple';
+       this.quizUrl = this.quizUrl + '&type=multiple';
 
        return this. http.get(this.quizUrl)
          .map(res => res.json());
