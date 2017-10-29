@@ -9,6 +9,7 @@ export class OpenTDBService {
   baseDifficulty: string;
   catUrl: string;
   quizUrl: string;
+  catId: number;
   limit = 100;
    private headers = new Headers({
     'Content-Type': 'application/json'
@@ -34,6 +35,7 @@ export class OpenTDBService {
   //   })
 
   //change this to retrieve a list of categories
+  /*
   getCategories = (page: number) => this.http.get(
     this.baseUri + 'api_category.php',
      //+ this.limit + '&page=' + page,
@@ -41,6 +43,14 @@ export class OpenTDBService {
         console.log(x.json());
         return x.json();
       })
+      */
+
+      getCategories(catId: number) {
+        this.catId = catId;
+        this.baseUri = this.baseUri + 'api_count.php?category=' + catId;
+        return this. http.get(this.baseUri)
+        .map(res => res.json());
+      }
 
   //change this to retrieve a list of questions
   /*

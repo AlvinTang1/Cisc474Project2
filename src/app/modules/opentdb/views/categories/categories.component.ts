@@ -10,6 +10,31 @@ import { OrderBy } from "../../../../orderBy.pipe";
   styleUrls: ['./categories.component.css']
 })
 export class CategoriesComponent {
+  category: number;
+  totalQuestions: number;
+  totalEasy: number;
+  totalMed: number;
+  totalHard;
+
+   constructor (private httpService: OpenTDBService) {}
+
+  setCategory(category: number) {
+    this.category = category;
+  }
+
+  onTestGet() {
+    this.httpService.getCategories(this.category).subscribe(
+         data => {
+             this.totalQuestions = (data['category_question_count']['total_question_count']);
+         },
+         error => alert(error),
+             () => console.log('Finished')
+     );
+ }
+
+
+
+  /*
   categories: any[] = [ ];
   chosenCategories: any[] = [ ];
   constructor(private _apiSvc: OpenTDBService, private _dialogService: DialogService) {
@@ -40,4 +65,5 @@ export class CategoriesComponent {
   removeCategory(category) {
     this.chosenCategories = this.chosenCategories.filter(x => x.name != category);  
   }
+  */
 }
