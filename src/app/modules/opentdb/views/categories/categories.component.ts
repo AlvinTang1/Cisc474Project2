@@ -62,11 +62,12 @@ export class CategoriesComponent {
   // }
 
   addCategory(category) {
-    this.chosenCategories += category;
+    this.chosenCategories.push(category);
   }
 
-  removeCategory(category) {
-    this.chosenCategories = this.chosenCategories.filter(x => x.name != category);  
+  removeCategory(chosenCategory) {
+    alert(chosenCategory.count);
+    this.chosenCategories = this.chosenCategories.filter(x => x.name != chosenCategory);  
   }
   */
 }

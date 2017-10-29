@@ -12,7 +12,7 @@ export class OpenTDBService {
   catId: number;
   limit = 100;
    private headers = new Headers({
-    'Content-Type': 'application/json'
+    //'Content-Type': 'application/json'
   });
   constructor(private http: Http, baseAPIUri: string) {
     this.baseUri = baseAPIUri;
