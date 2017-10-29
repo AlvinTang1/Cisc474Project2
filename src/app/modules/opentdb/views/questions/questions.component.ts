@@ -107,6 +107,13 @@ export class QuestionsComponent /*implements OnInit*/ {
   setCategory(category: number) {
       this.category = category;
   } 
+
+  alertPop() {
+    var x = document.getElementById("snackbar")
+    x.className = "show";
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
+
   onAnswerclick(spot) {
       if (this.showAnswer === '') {
           if (spot === '1') {
