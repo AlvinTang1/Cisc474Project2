@@ -23,8 +23,8 @@ export class QuestionsComponent /*implements OnInit*/ {
   Spot4: string;
   Score: number;
   questionsCompleted: number;
-  category: number;
-  difficulty: string;
+  category = 0;
+  difficulty = '';
 
   // Note, Booleans are not called, multiple choice only for this test, so can safely call the array of inccorect for 0,1,2
   constructor (private httpService: OpenTDBService) {}
@@ -133,8 +133,8 @@ export class QuestionsComponent /*implements OnInit*/ {
                   this.Score += 1;
               }
           }
+          this.questionsCompleted += 1;
       }
-      this.questionsCompleted += 1;
       this.showAnswer = this.getAnswer;
   }
 

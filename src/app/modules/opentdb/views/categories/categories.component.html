@@ -51,7 +51,7 @@
       padding: 15px 32px;
       text-align: center;
       text-decoration: none;
-      display: block;
+      display: inline-block;
       font-size: 16px;
       margin: 4px 2px;
       cursor: pointer;
@@ -95,6 +95,9 @@ div.container {
   </head>
 
 
+<div style="text-align:center">
+  <p>Question Info<p>
+  <p>Click a category, then click Show Info to display how many question are in that category</p>
 
 <button class="button button2" (click)="setCategory(9)"> General Knowledge </button>
 <button class="button button2" (click)="setCategory(10)"> Entertainment: Books </button>
@@ -120,15 +123,16 @@ div.container {
 <button class="button button2" (click)="setCategory(30)"> Science: Gadgets </button>
 <button class="button button2" (click)="setCategory(31)"> Entertainment: Japanese Anime & Manga </button>
 <button class="button button2" (click)="setCategory(32)"> Entertainment: Cartoon & Animations </button>
+<p></p>
 <button class="button-2 button1" (click)="onTestGet()">Show Info</button>
-
+<p></p>
 <div class="card">
   <div class="header">
     <h1>{{totalQuestions}}</h1>
   </div>
 
   <div class="container">
-    <p>Question Count Total:</p>
+    <p>Question Count Total</p>
   </div>
 </div>
 
@@ -138,7 +142,7 @@ div.container {
   </div>
 
   <div class="container">
-    <p>Question Count Easy:</p>
+    <p>Question Count Easy</p>
   </div>
 </div>
 
@@ -148,7 +152,7 @@ div.container {
   </div>
 
   <div class="container">
-    <p>Question Count Medium:</p>
+    <p>Question Count Medium</p>
   </div>
 </div>
 
@@ -158,8 +162,9 @@ div.container {
   </div>
 
   <div class="container">
-    <p>Question Count Hard:</p>
+    <p>Question Count Hard</p>
   </div>
+</div>
 </div>
 
 

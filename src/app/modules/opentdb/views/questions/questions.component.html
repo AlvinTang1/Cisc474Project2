@@ -81,7 +81,7 @@
       padding: 15px 32px;
       text-align: center;
       text-decoration: none;
-      display: block;
+      display: inline-block;
       font-size: 16px;
       margin: 4px 2px;
       cursor: pointer;
@@ -164,6 +164,19 @@ div.container {
 }
   </style>
   </head>
+<div style="text-align:center">
+  <p>Click New Question to get a question of any difficulty or category.</p>
+  <p>Use the buttons below to change difficult and category as you like</p>
+    <button class="button-3 button1" (click)="onTestGet()">New Question</button>
+    <div [innerHTML]="getQuestion"></div>
+    
+    <button (click)="onAnswerclick('1')"> <div [innerHTML]="Spot1"></div> </button>
+    <button (click)="onAnswerclick('2')"> <div [innerHTML]="Spot2"></div> </button>
+    <button (click)="onAnswerclick('3')"> <div [innerHTML]="Spot3"></div> </button>
+    <button (click)="onAnswerclick('4')"> <div [innerHTML]="Spot4"></div>  </button>
+    <div [innerHTML]="showAnswer"></div>
+    <p>Questions Completed: {{questionsCompleted}}</p>
+    <p>Score: {{Score}}</p>
 
 <div id="snackbar">Chosen Difficulty: {{difficulty}}</div>
 
@@ -173,7 +186,7 @@ div.container {
 <button class="button-2 button2" (click)="setDifficulty('hard')" (click)="alertPop()"> Hard </button>
 
 <p></p>
-
+<button class="button button2" (click)="setCategory(0)"> Any </button>
 <button class="button button2" (click)="setCategory(9)"> General Knowledge </button>
 <button class="button button2" (click)="setCategory(10)"> Entertainment: Books </button>
 <button class="button button2" (click)="setCategory(11)"> Entertainment: Film </button>
@@ -200,17 +213,8 @@ div.container {
 <button class="button button2" (click)="setCategory(32)"> Entertainment: Cartoon & Animations </button>
 
 <p></p>
+</div>
 
-<button class="button-3 button1" (click)="onTestGet()">New Question</button>
-<p>Question: {{getQuestion}}</p>
-
-<button (click)="onAnswerclick('1')"> {{Spot1}} </button>
-<button (click)="onAnswerclick('2')"> {{Spot2}} </button>
-<button (click)="onAnswerclick('3')"> {{Spot3}} </button>
-<button (click)="onAnswerclick('4')"> {{Spot4}} </button>
-<p>Answer: {{showAnswer}}</p>
-<p>Questions Completed: {{questionsCompleted}}</p>
-<p>Score: {{Score}}</p>
 
 
     

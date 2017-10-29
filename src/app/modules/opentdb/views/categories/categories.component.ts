@@ -23,16 +23,16 @@ export class CategoriesComponent {
   }
 
   onTestGet() {
-    this.httpService.getCategories(this.category).subscribe(
-         data => {
-             this.totalQuestions = (data['category_question_count']['total_question_count']);
-             this.totalEasy = (data['category_question_count']['total_easy_question_count']);
-             this.totalMed = (data['category_question_count']['total_medium_question_count']);
-             this.totalHard = (data['category_question_count']['total_hard_question_count']);
-         },
-         error => alert(error),
-             () => console.log('Finished')
-     );
+      this.httpService.getCategories(this.category).subscribe(
+        data => {
+            this.totalQuestions = (data['category_question_count']['total_question_count']);
+            this.totalEasy = (data['category_question_count']['total_easy_question_count']);
+            this.totalMed = (data['category_question_count']['total_medium_question_count']);
+            this.totalHard = (data['category_question_count']['total_hard_question_count']);
+        },
+        error => alert(error),
+            () => console.log('Finished')
+    );
  }
 
 
