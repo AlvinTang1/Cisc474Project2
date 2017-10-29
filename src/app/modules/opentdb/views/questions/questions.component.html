@@ -40,10 +40,97 @@
   </div>
 </div>
 -->
-<button (click)="setDifficulty('')"> Any difficulty </button>
-<button (click)="setDifficulty('easy')"> Easy </button>
-<button (click)="setDifficulty('medium')"> Medium </button>
-<button (click)="setDifficulty('hard')"> Hard </button>
+
+<head>
+  <style>
+  .button {
+      background-color: rgb(92, 212, 228); /* Blue */
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      -webkit-transition-duration: 0.4s; /* Safari */
+      transition-duration: 0.4s;
+  }
+ 
+
+  .button-2 {
+      background-color: rgb(236, 154, 60); /* Green */
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      -webkit-transition-duration: 0.4s; /* Safari */
+      transition-duration: 0.4s;
+  }
+
+  .button-3 {
+      background-color: rgb(110, 236, 60); /* Green */
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      -webkit-transition-duration: 0.4s; /* Safari */
+      transition-duration: 0.4s;
+  }
+  
+  .button1 {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+  .button2:hover {
+      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+
+  div.card {
+  width: 250px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+  margin: 12px 2px;
+  display: inline-block;
+
+}
+
+div.card:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+div.header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    font-size: 40px;
+}
+
+div.container {
+    padding: 10px;
+}
+
+  </style>
+  </head>
+
+
+
+
+<button class="button-2 button2" (click)="setDifficulty('')"> Any difficulty </button>
+<button class="button-2 button2" (click)="setDifficulty('easy')"> Easy </button>
+<button class="button-2 button2" (click)="setDifficulty('medium')"> Medium </button>
+<button class="button-2 button2" (click)="setDifficulty('hard')"> Hard </button>
 <p>Chosen Difficulty: {{difficulty}}</p>
 <button (click)="setCategory(9)"> General Knowledge </button>
 <button (click)="setCategory(10)"> Entertainment: Books </button>
@@ -70,8 +157,7 @@
 <button (click)="setCategory(31)"> Entertainment: Japanese Anime & Manga </button>
 <button (click)="setCategory(32)"> Entertainment: Cartoon & Animations </button>
 
-<p>Cat ID: {{category}}</p>
-<button (click)="onTestGet()">New Question</button>
+<button class="button-3 button1" (click)="onTestGet()">New Question</button>
 <p>Question: {{getQuestion}}</p>
 
 <button (click)="onAnswerclick('1')"> {{Spot1}} </button>
