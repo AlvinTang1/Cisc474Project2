@@ -14,7 +14,7 @@ export class CategoriesComponent {
   totalQuestions: number;
   totalEasy: number;
   totalMed: number;
-  totalHard;
+  totalHard: number;
 
    constructor (private httpService: OpenTDBService) {}
 
@@ -26,6 +26,9 @@ export class CategoriesComponent {
     this.httpService.getCategories(this.category).subscribe(
          data => {
              this.totalQuestions = (data['category_question_count']['total_question_count']);
+             this.totalEasy = (data['category_question_count']['total_easy_question_count']);
+             this.totalMed = (data['category_question_count']['total_medium_question_count']);
+             this.totalHard = (data['category_question_count']['total_hard_question_count']);
          },
          error => alert(error),
              () => console.log('Finished')

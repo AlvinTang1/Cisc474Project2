@@ -47,8 +47,8 @@ export class OpenTDBService {
 
       getCategories(catId: number) {
         this.catId = catId;
-        this.baseUri = this.baseUri + 'api_count.php?category=' + catId;
-        return this. http.get(this.baseUri)
+        this.catUrl = this.baseUri + 'api_count.php?category=' + catId;
+        return this. http.get(this.catUrl)
         .map(res => res.json());
       }
 
