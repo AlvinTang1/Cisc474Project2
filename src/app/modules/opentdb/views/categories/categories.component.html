@@ -42,10 +42,48 @@
       -webkit-transition-duration: 0.4s; /* Safari */
       transition-duration: 0.4s;
   }
+ 
+
+  .button-2 {
+      background-color: rgb(110, 236, 60); /* Green */
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      -webkit-transition-duration: 0.4s; /* Safari */
+      transition-duration: 0.4s;
+  }
+  
+  .button1 {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
 
   .button2:hover {
       box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
   }
+
+  div.card {
+  width: 250px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+}
+
+div.header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    font-size: 40px;
+}
+
+div.container {
+    padding: 10px;
+}
+
   </style>
   </head>
 
@@ -76,8 +114,49 @@
 <button class="button button2" (click)="setCategory(31)"> Entertainment: Japanese Anime & Manga </button>
 <button class="button button2" (click)="setCategory(32)"> Entertainment: Cartoon & Animations </button>
 
-<p>Cat ID: {{category}}</p>
-<button (click)="onTestGet()">Show Info</button>
+<button class="button-2 button1" (click)="onTestGet()">Show Info</button>
+
+<div class="card">
+  <div class="header">
+    <h1>{{totalQuestions}}</h1>
+  </div>
+
+  <div class="container">
+    <p>Question Count:</p>
+  </div>
+</div>
+
+<div class="card">
+  <div class="header">
+    <h1>{{totalEasy}}</h1>
+  </div>
+
+  <div class="container">
+    <p>Question Count Easy:</p>
+  </div>
+</div>
+
+<div class="card">
+  <div class="header">
+    <h1>{{totalMed}}</h1>
+  </div>
+
+  <div class="container">
+    <p>Question Count Medium:</p>
+  </div>
+</div>
+
+<div class="card">
+  <div class="header">
+    <h1>{{totalHard}}</h1>
+  </div>
+
+  <div class="container">
+    <p>Question Count Hard:</p>
+  </div>
+</div>
+
+
 <p>Question Count: {{totalQuestions}}</p>
 <p>Question Count Easy: {{totalEasy}}</p>
 <p>Question Count Medium: {{totalMed}}</p>
