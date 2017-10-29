@@ -5,6 +5,10 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class OpenTDBService {
   baseUri: string;
+  baseCategory: number;
+  baseDifficulty: string;
+  catUrl: string;
+  quizUrl: string;
   limit = 100;
    private headers = new Headers({
     'Content-Type': 'application/json'
@@ -39,6 +43,7 @@ export class OpenTDBService {
       })
 
   //change this to retrieve a list of questions
+  /*
   getQuestions = (page: number, questionCount: number, difficulty: string, categoryId: number, type: string) => this.http.get(
     this.baseUri + 'api.php?' + 'amount=' + questionCount + '&'
     + 'category=' + categoryId + '&'
@@ -50,4 +55,22 @@ export class OpenTDBService {
       console.log(x.json());
       return x.json();
     })
+    */
+
+    getQuiz(baseCategory: number, baseDifficulty: string) {
+      this.baseCategory = baseCategory;
+      this.baseDifficulty = baseDifficulty;
+       this.quizUrl = this.baseUri + 'api.php?';
+       // id range for cats [9,32]
+       if (this.baseCategory >= 9 && this.baseCategory <= 32) {
+           this.quizUrl = this.quizUrl + '&category=' + this.baseCategory;
+       }
+       if (this.baseDifficulty !== '') {
+           this.quizUrl = this.quizUrl + '&difficulty=' + this.baseDifficulty;
+       }
+       this.quizUrl = this.quizUrl + '&tpye=multiple';
+
+       return this. http.get(this.quizUrl)
+         .map(res => res.json());
+   }
 }
