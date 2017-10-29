@@ -1,34 +1,24 @@
  <!-- 
  <div [hidden]="categories.length==0">
-<h2>Categories of Questions</h2>
+<h2>Top {{attributes.perPage}} Categories of Questions</h2>
 <div class="container-fluid">
 <table class='table-responsive table'>
   <thead>
   <th>Choose your categories:</th>
 </thead>
-  <!-- | orderBy : 'name' : 'asc'-->
-  <tr *ngFor="let category of categories ; let i=index" (click)='addCategory(category)' class="clickable" >
-    <!-- <td>{{i+1}}</td> -->
-    <td>{{category.name}}</td>
+  <tr *ngFor="let category of categories | orderBy : 'name'; let i=index" (click)='addCategory(category)' class="clickable" >
+    <td>
+      
+  {{i+1}}</td><td> {{category.name}}</td>
   </tr>
 </table>
-<br><br>
 <table class='table-responsive table'>
   <thead>
   <th>Chosen categories:</th>
 </thead>
-  <tr *ngFor="let chosenCategory of chosenCategories;let i=index" (click)='removeCategory(category)' class="clickable" >
-    <!-- <td>{{i+1}}</td> -->
-    <td>{{chosenCategory.name}}</td>
-    <td><label>Question Count:</label><input type="number" [(ngModel)]="chosenCategory.count"></td>
-    <td><label>Difficulty:</label><input type="number" [(ngModel)]="chosenCategory.difficulty"></td>
-    <td><label>Question Type:</label>
-      <select class="form-control" name="type" [(ngModel)]="chosenCategory.type">
-          <option  [value]="0" [selected]="chosenCategory.status == 0">Any</option>
-          <option  [value]="1" [selected]="chosenCategory.status == 1">Multiple Choice</option>
-          <option  [value]="2" [selected]="chosenCategory.status == 2">True/False</option>
-      </select>
-    </td>
+  <tr *ngFor="let category of chosenCategories;let i=index" (click)='removeCategory(category)' class="clickable" >
+    <td>
+  {{i+1}}</td><td> {{category.name}}</td>
   </tr>
 </table>
 </div>
