@@ -165,18 +165,29 @@ div.container {
   </style>
   </head>
 <div style="text-align:center">
-  <p>Click New Question to get a question of any difficulty or category.</p>
-  <p>Use the buttons below to change difficult and category as you like</p>
+  <p>Click 'New Question' to get a question of any difficulty or category.</p>
+  <p>Use the buttons select a specific difficulty and category.</p>
+    <br>
     <button class="button-3 button1" (click)="onTestGet()">New Question</button>
+    <br>
+    <br>
+    <div style="font-weight: bold;">Question :</div>
     <div [innerHTML]="getQuestion"></div>
-    
+    <br>
     <button (click)="onAnswerclick('1')"> <div [innerHTML]="Spot1"></div> </button>
     <button (click)="onAnswerclick('2')"> <div [innerHTML]="Spot2"></div> </button>
     <button (click)="onAnswerclick('3')"> <div [innerHTML]="Spot3"></div> </button>
     <button (click)="onAnswerclick('4')"> <div [innerHTML]="Spot4"></div>  </button>
-    <div [innerHTML]="showAnswer"></div>
-    <p>Questions Completed: {{questionsCompleted}}</p>
-    <p>Score: {{Score}}</p>
+    <br>
+    <br>    
+    <div style="font-style:italic;" [innerHTML]="showAnswer"></div>
+    <div style="text-align: center; margin-right: 50%;"> <!-- to get right alignment with centering outside -->
+      <p style="text-align: right;">Questions Completed: <span style="font-weight: bold;">{{questionsCompleted}}</span></p>
+      <p style="text-align: right;">Score: <span style="font-weight: bold;">{{Score}}</span></p>
+    </div>
+    <br>
+    <br>
+    
 
 <div id="snackbar">Chosen Difficulty: {{difficulty}}</div>
 

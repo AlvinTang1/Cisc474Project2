@@ -135,7 +135,7 @@ export class QuestionsComponent /*implements OnInit*/ {
           }
           this.questionsCompleted += 1;
       }
-      this.showAnswer = this.getAnswer;
+      this.showAnswer = '--- ' + this.getAnswer + ' ---';
   }
 
 /*
