@@ -135,30 +135,7 @@ export class QuestionsComponent /*implements OnInit*/ {
           }
           this.questionsCompleted += 1;
       }
-      this.showAnswer = '--- ' + this.getAnswer + ' ---';
+      this.showAnswer = 'Correct Answer: ' + this.getAnswer;
   }
 
-/*
-  questions: any[] = [ ];
-  attributes: any[] = [ ];
-  selectedQuestion = -1;
-  constructor(private _apiSvc: OpenTDBService, private _dialogService: DialogService) {
-    // _apiSvc.getQuestions(1, 10, 'medium', ).subscribe(x => {
-    //   this.questions = x.questions.question;
-    //   this.attributes = x.questions['@attr'];
-    //  });
-  }
-
-  showDetail(index, track) {
-    console.log(index);
-    console.log(track.name);
-    if (this.selectedQuestion === index){
-      this.selectedQuestion = -1;
-    } else {
-      this.selectedQuestion = index;
-    }
-  }
-    ngOnInit() {
-  }
-*/
 }

@@ -1,31 +1,3 @@
- <!-- 
- <div [hidden]="categories.length==0">
-<h2>Top {{attributes.perPage}} Categories of Questions</h2>
-<div class="container-fluid">
-<table class='table-responsive table'>
-  <thead>
-  <th>Choose your categories:</th>
-</thead>
-  <tr *ngFor="let category of categories | orderBy : 'name'; let i=index" (click)='addCategory(category)' class="clickable" >
-    <td>
-      
-  {{i+1}}</td><td> {{category.name}}</td>
-  </tr>
-</table>
-<table class='table-responsive table'>
-  <thead>
-  <th>Chosen categories:</th>
-</thead>
-  <tr *ngFor="let category of chosenCategories;let i=index" (click)='removeCategory(category)' class="clickable" >
-    <td>
-  {{i+1}}</td><td> {{category.name}}</td>
-  </tr>
-</table>
-</div>
-<br/>&nbsp;
-</div>
--->
-
 <head>
   <style>
   .button {
@@ -43,7 +15,6 @@
       transition-duration: 0.4s;
   }
  
-
   .button-2 {
       background-color: rgb(110, 236, 60); /* Green */
       border: none;
